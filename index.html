@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Création d'un site Web de portfolio personnel réactif à l'aide de HTML CSS et JavaScript avec la possibilité de switcher entre le mode clair et le mode sombre." />
+  <meta name="author" content="Aurélie Ly, Directrice Artistique, Graphiste, Webdesigner" />
+  <meta name="copyright" content="Aurélie Ly, Directrice Artistique, Graphiste, Webdesigner" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/x-icon" href="images/logo-lya.png" />
+
+  <title>Mon portfolio</title>
+
+  <!-- ===== Fichiers CSS.  ===== -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/skins/color-1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- ===== Fichiers CSS.  ===== -->
+
+  <!-- ====== Sélecteur de style. ====== -->
+  <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled />
+  <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled />
+  <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled />
+  <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled />
+  <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled />
+  <link rel="stylesheet" href="css/style-switcher.css" />
+  <!-- ====== Sélecteur de style. ====== -->
+</head>
+
+<!--
+Home : logo espace après, lien pour mener à l'accueil
+coins photo décalés en responsive
+A propos : rajout catégories sous infos
+Mes services : changer les pictos
+Mes projets : images se suivent
+Contact : bouton envoyer un message, lier au mail
+mettre en ligne -->
+
+<body>
+  <!-- ===== Début du conteneur principal de la page. ===== -->
+  <div class="main-container">
+    <!-- ===== Début de la barre de navigation latérale. ===== -->
+    <div class="aside">
+      <a href="index.html">
+        <div class="logo">
+
+         <!-- <img src="images/logo-lya-150px.png" alt="" /> -->
+          <img src="images/logo-al.svg" alt="" />
+
+        </div>
+      </a>
+
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+
+      <ul class="nav">
+        <li>
+          <a href="#home" class="active">
+            <i class="fa fa-home"></i> Accueil
+          </a>
+        </li>
+        <li>
+          <a href="#about"> <i class="fa fa-user"></i> À propos de moi </a>
+        </li>
+        <li>
+          <a href="#services"> <i class="fa fa-list"></i>Mes services </a>
+        </li>
+        <li>
+          <a href="#portfolio">
+            <i class="fa fa-briefcase"></i>Mes projets
+          </a>
+        </li>
+        <li>
+          <a href="#contact"> <i class="fa fa-comments"></i>Contact </a>
+        </li>
+      </ul>
+    </div>
+    <!-- ===== Fin de la barre de navigation latérale. ===== -->
+
+    <!-- ===== Début du contenu de la page. ===== -->
+    <div class="main-content">
+      <!-- ===== Début de la page d'accueil du portfolio. ===== -->
+      <section class="home active section" id="home">
+        <div class="container">
+          <div class="row">
+            <div class="home-info padd-15">
+              <h3 class="hello">
+                Bonjour, je m'appelle
+                <span class="name">Aurélie Ly</span>
+              </h3>
+              <h3 class="my-profession">
+                Je suis
+                <span class="typing"> Directrice Artistique </span>
+              </h3>
+              <p align="justify">
+                Durant plus de 10 années dans le monde du design, j'ai pu explorer les différentes facettes
+                du print, découvrir les multiples possibilités du digital, et franchir les frontières de la vidéo.
+                La curiosité, l'écoute et la créativité ont été de bons compagnons pour traverser les campagnes de communications 360° avec succès.
+                <br><br>
+                Le voyage n'est pas fini ! Soyez la prochaine destination et créons ensemble de beaux souvenirs.
+              </p>
+              <a href="CV/aureliely-cv-DA.pdf" class="btn" style="
+                     background-color: var(--skin-color);
+                            color: #fff;
+                            font-weight: bold;
+                   ">
+                Télécharger mon CV
+              </a>
+            </div>
+            <div class="home-img padd-15">
+              <img src="images/aurelie.jpg" alt="Photo personnel" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Fin de la page d'accueil du portfolio. ===== -->
+
+      <!-- ===== Début de la partie 'À propos de moi' ===== -->
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>À propos de moi</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-content padd-15">
+              <div class="row">
+                <div class="about-text padd-15">
+                  <h3>
+                    Je suis Aurélie Ly,
+                    <span>directrice artistique, graphiste, webdesigner
+                    </span>
+                  </h3>
+                  <p align="justify">
+                    Multi-casquettes, j'ai pu acquérir plusieurs compétences durant mes études et mes expériences professionnelles. Le print et le digital sont mes deux domaines d'expertise, la vidéo et l'animation des réseaux sociaux viennent compléter mes bagages. 
+                    <br><br>
+                    Et l'humaine dans tout ça ? Bienveillante et à l'écoute, j'aime connaître les avis de chacun, positifs comme négatifs, pour m'améliorer, et conseiller en retour. L'ouverture d'esprit et la curiosité me permettent de découvrir, sans jugement, les personnes qui m'entourent et avoir des échanges enrichissants. Ma persévérance et mon oeil aiguisé sont de bons alliés pour aller au bout des projets sans rater un détail.
+                    <br><br>
+                    Avec ce package, j'ai pu gérer des projets, du brief à la livraison, en suivant rigoureusement chaque étape tout en échangeant avec les équipes et les prestataires. Je suis passionnée par mon métier qui offre une grande diversité dans les missions et des rencontres de tout horizon.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==== Début de la partie informations ===== -->
+              <div class="row">
+                <div class="personal-info padd-15">
+                  <div class="row">
+                    <div class="info-item padd-15">
+                      <p>Né le : <span>10 Juillet 1990</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Àge : <span>35</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>
+                        CV :
+                        <span>
+                          <a href="CV/aureliely-cv-DA.pdf"
+                            target="_blank" class="book" style="color: var(--skin-color)">
+                            Cliquez ici
+                          </a>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>
+                        Mail :
+                        <span>aurelielyth@gmail.com</span>
+                      </p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Niveau : <span>MASTER 2 (Bac+5) </span></p>
+                    </div>
+
+                    <div class="info-item padd-15">
+                      <p>Résidence : <span>Ile-de-France, Toulon</span></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="buttons padd-15">
+                      <a href="#contact" data-section-index="1" class="btn hire-me" style="
+                            background-color: var(--skin-color);
+                            color: #fff;
+                            font-weight: bold;
+                          ">
+                        Contactez-moi
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skill-item padd-15">
+                      <h5>PHOTOSHOP</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 90%"></div>
+                        <div class="skill-percent">90%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>ILLUSTRATOR</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 90%"></div>
+                        <div class="skill-percent">90%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>INDESIGN</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 90%"></div>
+                        <div class="skill-percent">90%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>AFTER EFFECT</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 75%"></div>
+                        <div class="skill-percent">75%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>PREMIERE PRO</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 75%"></div>
+                        <div class="skill-percent">75%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>LIGHTROOM</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 60%"></div>
+                        <div class="skill-percent">60%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>SKETCH</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 70%"></div>
+                        <div class="skill-percent">70%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>WORDPRESS PRESTASHOP</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 75%"></div>
+                        <div class="skill-percent">75%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>POWERPOINT</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 80%"></div>
+                        <div class="skill-percent">80%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>HTML5/CSS3</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 40%"></div>
+                        <div class="skill-percent">40%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ==== Fin de la partie informations ===== -->
+
+              <!-- === Début de la partie étude et expériences === -->
+              <div class="row">
+                <div class="education padd-15">
+                  <h3 class="title">Études</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+                        <!-- ===== timeline item ===== -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2016 - 2018
+                          </h3>
+                          <h4 class="timeline-title">
+                            Master 2 directeur artistique
+                          </h4>
+                          <p class="timeline-text">ECV Digital, Bordeaux</p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2015 - 2016
+                          </h3>
+                          <h4 class="timeline-title">Bachelor 3 webdesign</h4>
+                          <p class="timeline-text">ICAN, Paris</p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2012 - 2014
+                          </h3>
+                          <h4 class="timeline-title">BTS design graphique</h4>
+                          <p class="timeline-text">
+                            Campus Fonderie de l'Image, Bagnolet
+                          </p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2011 - 2012
+                          </h3>
+                          <h4 class="timeline-title">
+                            Classe préparatoire au BTS design graphique
+                          </h4>
+                          <p class="timeline-text">
+                            Campus Fonderie de l'Image, Bagnolet
+                          </p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2010 - 2011
+                          </h3>
+                          <h4 class="timeline-title">
+                            Mise à niveau en arts appliqués
+                          </h4>
+                          <p class="timeline-text">
+                            Lycée Claude Nicolas Ledoux, Vincennes
+                          </p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2009 - 2010
+                          </h3>
+                          <h4 class="timeline-title">
+                            Licence 1 arts plastiques
+                          </h4>
+                          <p class="timeline-text">
+                            Université Panthéon-Sorbonne Paris 1
+                          </p>
+                        </div>
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2009
+                          </h3>
+                          <h4 class="timeline-title">
+                            Baccalauréat littéraire, arts plastiques
+                          </h4>
+                          <p class="timeline-text">
+                            Lycée Van Dongen, Lagny-sur-Marne
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience padd-15">
+                  <h3 class="title">Expériences</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> Janvier 2026 - Aujourd'hui
+                          </h3>
+                          <h4 class="timeline-title">Directrice artistique</h4>
+                          <h5>Freelance</h5>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> Mai 2024 - Octobre 2025
+                          </h3>
+                          <h4 class="timeline-title">Graphiste</h4>
+                          <h5>
+                            Dresco, Groupe Eram, Paris
+                          </h5>
+                          <p class="timeline-text">
+                            Retouche des packshots des chaussures pour l'ensemble des marques </p>
+                            <p>
+                            Licence Les Tropeziennes par M. Belarbi <br>
+                            • Modernisation de l'image de la marque <br>
+                            • Direction artistique à chaque saison <br>
+                            • Webdesign <br>
+                            • Conception de newsletters BtoC et BtoB <br>
+                            • Visuels et vidéos pour réseaux sociaux <br>
+                            • Création du lookbook à chaque saison
+                            </p>
+
+                            <p>
+                            Licence Kaporal <br>
+                            • Création du lookbook à chaque saison <br>
+                            • Design boîte à chaussures
+                            </p>
+
+                            <p>
+                              Licence Roadsign <br>
+                            • Design boîte à chaussures <br>
+                            • Réalisation de la charte graphique <br>
+                            </p>
+
+                            <p>
+                            Licence Armor Lux <br>
+                            • Création du lookbook <br>
+                            • Réalisation de PLV
+                          </p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> Octobre 2023 - Mars 2024
+                          </h3>
+                          <h4 class="timeline-title">Graphiste</h4>
+                          <h5>
+                            Résine Média, agence de communication, Toulon
+                          </h5>
+                          <p class="timeline-text">
+                            • Création affiches, roll up, carte de visite <br>
+                            • Conception site internet intégré sur Wordpress <br>
+                            • Participation à la réalisation d'un court métrage
+                          </p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2021 - 2022
+                          </h3>
+                          <h4 class="timeline-title">Directrice artistique</h4>
+                          <h5>Freelance</h5>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2015 - 2021
+                          </h3>
+                          <h4 class="timeline-title">
+                            Directrice artistique, graphiste, webdesigner
+                          </h4>
+                          <h5>Idéal Audition, audioprothèse, Paris</h5>
+                          <p class="timeline-text">
+                          • Modernisation de l'identité visuelle <br>
+                          • Gestion de projets <br>
+                          • Gestion d'une équipe de 2 personnes <br>
+                          • Création supports print (revue presse, brochures, flyers, affiches vitrines,
+                           affiches presse,...), <br>
+                          • Webdesign (refonte site, bannières, newsletters, landing page, ...) <br>
+                          • Conception d'infographies et de pictogrammes <br>
+                          • Réalisation de vidéos <br>
+                          • Conception adhésifs vitrine et visuels goodies <br>
+                          • Community management (animation réseaux sociaux, production
+                            de visuels pour les posts) <br>
+                          • Contact avec les prestataires <br>
+                          </p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2015
+                          </h3>
+                          <h4 class="timeline-title">Graphiste freelance</h4>
+                          <h5>Paulh Vagabond', prêt à porter</h5>
+                          <p class="timeline-text">Création de l'identité visuelle</p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2015
+                          </h3>
+                          <h4 class="timeline-title">Graphiste freelance</h4>
+                          <h5>Buzy Bee, agence évènementielle</h5>
+                          <p class="timeline-text">
+                            Création de l'identité visuelle
+                          </p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2012 - 2014
+                          </h3>
+                          <h4 class="timeline-title">Graphiste</h4>
+                          <h5>
+                            Coriolis Télécom, télécommunication, Suresnes
+                          </h5>
+                          <p class="timeline-text">
+                          • Création de visuels print et digitaux <br>
+                          • Conception de divers supports visuels pour améliorer la communication interne <br>
+                          • Missions transversales avec les différents services <br>
+                          </p>
+                        </div>
+
+                        <!--  élément de la chronologie  -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i> 2011
+                          </h3>
+                          <h4 class="timeline-title">Graphiste</h4>
+                          <h5>Key to love, coaching personnel</h5>
+                          <p class="timeline-text">
+                            Réalisation de supports de communication
+                            (carte de visite, flyer, guide électronique)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- === Fin de la partie étude et expériences === -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Fin de la partie 'À propos de moi' ===== -->
+
+      <!-- ===== Début de la partie 'Mes services' ===== -->
+      <section class="service section" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Mes services</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-palette"></i>
+                </div>
+                <h4>Identité visuelle</h4>
+                <p>
+                  Création de logos, typographies, colorimétrie, pictogrammes, univers et chartes graphique
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-print"></i>
+                </div>
+                <h4>Print</h4>
+                <p>
+                  Conception de tout support imprimé (affiches, flyers, cartes, plaquettes, brochures, presse, goodies,
+                  ...)
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-laptop"></i>
+                </div>
+                <h4>Digital</h4>
+                <p>
+                  Création de visuels sur la toile (bannières, images réseaux sociaux, newsletters,
+                  landing pages, ...)
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-paint-brush"></i>
+                </div>
+                <h4>Web Design</h4>
+                <p>
+                  Design et refonte de sites desktop et responsive, design d'applications, UX/UI design
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-video"></i>
+                </div>
+                <h4>Vidéo</h4>
+                <p>
+                  Montage vidéos, réalisation d'animations simples, motion design, travail du son
+
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+
+            <!-- ===== Début d'un de mes services. ====== -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-pen-nib"></i>
+                </div>
+                <h4>Illustration</h4>
+                <p>
+                  Conception d'infographies, pictogrammes, illustrations simples, typographies
+                </p>
+              </div>
+            </div>
+            <!-- ===== Fin d'un de mes services. ====== -->
+          </div>
+        </div>
+      </section>
+      <!-- ===== Fin de la partie 'Mes services' ===== -->
+
+      <!-- ===== Début de la partie 'Mes projets'. ===== -->
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Mes projets</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="portfolio-heading padd-15">
+              <h2>Un aperçu de mes réalisations :</h2>
+            </div>
+          </div>
+
+          <div class="row">
+
+          
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/coriolis-2.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/spaser-mur.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/imaginhair.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/ia-web.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/media.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/surfrider.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/abcd.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/montage-sf.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-inner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/coriolis.jpg" alt="Image d'une des réalisations" />
+                </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-video padd-15">
+              <div class="portfolio-video-inner shadow-dark">
+                <div class="portfolio-img">
+                <video width="500" height="281" src="images/videos/hermes.mp4" controls></video>                
+              </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-video padd-15">
+              <div class="portfolio-video-inner shadow-dark">
+                <div class="portfolio-img">
+                <video width="500" height="281" src="images/videos/trump_1an.mp4" controls></video>                
+              </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+            <!-- ====== Début d'une des images projet ====== -->
+            <div class="portfolio-video padd-15">
+              <div class="portfolio-video-inner shadow-dark">
+                <div class="portfolio-img">
+                <video width="500" height="281" src="images/videos/sudouest.mp4" controls></video>                
+              </div>
+              </div>
+            </div>
+            <!-- ====== Fin d'une des images projet ====== -->
+
+
+          </div>
+        </div>
+      </section>
+      <!-- ===== Fin de la partie 'Mes projets' ===== -->
+
+      <!-- ===== Début de la partie 'Contact' ===== -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Contactez-moi</h2>
+            </div>
+          </div>
+          <h3 class="contact-title padd-15">
+            Vous avez des questions à me poser ?
+          </h3>
+          <h4 class="contact-sub-title padd-15">JE SUIS À VOTRE ÉCOUTE</h4>
+          <div class="row flex-container">
+            <!-- Début - Adresse -->
+            <div class="contact-info-item card">
+              <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+              <h4 style="color: #000">Lieu de résidence :</h4>
+              <p style="color: #000">Ile-de-France & Toulon</p>
+            </div>
+            <!-- Fin - Adresse -->
+
+            <!-- Début - mail -->
+            <div class="contact-info-item card">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <h4 style="color: #000">Mail :</h4>
+              <p style="color: #000">aurelielyth@gmail.com</p>
+            </div>
+            <!-- Fin - mail -->
+
+            <!-- Début - Site Web -->
+            <div class="contact-info-item card">
+              <div class="icon"><i class="fa fa-globe-europe"></i></div>
+              <h4 style="color: #000">Instagram</h4>
+              <p>
+                <a href="https://drive.google.com/file/d/1GL4eHO75RW16F3z_aTsWqj2H6A3xaTs9/view?usp=drive_link"
+                  target="_blank" class="book" style="color: var(--skin-color)">
+                  Cliquez ici
+                </a>
+              </p>
+            </div>
+            <!-- Fin - Site Web -->
+          </div>
+
+          <h3 class="contact-title padd-15">ENVOYEZ-MOI UN MAIL</h3>
+          <h4 class="contact-sub-title padd-15">
+            JE SUIS TRÈS RÉACTIVE AUX MESSAGES
+          </h4>
+
+          <!-- ====== Début du formulaire de contact ====== -->
+          <div class="row">
+            <div class="card1">
+              <div class="contact-form padd-15">
+                <div class="row">
+                  <!-- Nom -->
+                  <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                      <label for="name" style="cursor: pointer">
+                        Nom :
+                        <span style="color: var(--skin-color)">*</span>
+                      </label>
+                      <input type="text" id="name" class="form-control" placeholder="Entrez votre nom ici..."
+                        required />
+                    </div>
+                  </div>
+                  <!-- Nom -->
+
+                  <!-- Mail -->
+                  <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                      <label for="email" style="cursor: pointer">
+                        Mail :
+                        <span style="color: var(--skin-color)">*</span>
+                      </label>
+                      <input type="email" id="email" class="form-control" placeholder="Entrez votre mail ici..."
+                        required />
+                    </div>
+                  </div>
+                  <!-- Mail -->
+                </div>
+
+                <div class="row">
+                  <!-- Sujet -->
+                  <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                      <label for="subject" style="cursor: pointer">
+                        Sujet :
+                        <span style="color: var(--skin-color)">*</span>
+                      </label>
+                      <input type="text" id="subject" class="form-control"
+                        placeholder="Entrez l'intitulé de votre message ici..." />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Message -->
+                  <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                      <label for="message" style="cursor: pointer">
+                        Message :
+                        <span style="color: var(--skin-color)">*</span>
+                      </label>
+                      <textarea id="message" class="form-control"
+                        placeholder="Entrez le contenu de votre message ici..." required></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Bouton Envoyer -->
+                  <div class="form-item col-12 padd-15">
+                    <button type="submit" class="btn" style="
+                           background-color: var(--skin-color);
+                            color: #fff;
+                            font-weight: bold;
+                        ">
+                      Envoyer le message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ====== Fin du formulaire de contact ====== -->
+        </div>
+      </section>
+      <!-- ===== Fin de la partie 'Contact' ===== -->
+    </div>
+    <!-- ===== Fin du contenu de la page. ===== -->
+  </div>
+  <!-- ===== Fin du conteneur principal de la page. ===== -->
+
+  <!-- ===== Début du sélecteur de couleur de la page. ===== -->
+  <div class="style-switcher">
+    <div class="style-switcher-toggler s-icon">
+      <i class="fas fa-cog fa-spin"></i>
+    </div>
+    <div class="day-night s-icon">
+      <i class="fas"></i>
+    </div>
+    <h4>Couleurs du thème</h4>
+    <div class="colors">
+      <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+      <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+      <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+      <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+      <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+    </div>
+  </div>
+  <!-- ===== Fin du sélecteur de couleur de la page. ===== -->
+
+  <!-- ===== Début des fichiers JS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+  <script src="js/style-switcher.js"></script>
+  <!-- ===== Fin des fichiers JS ===== -->
+</body>
+
+</html>

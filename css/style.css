@@ -1,0 +1,1001 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* Définition des variables de couleurs pour le thème clair */
+:root {
+  /*--bg-black-900: #f2f2fc;*/
+  --bg-black-900: #f8eeec;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+  --text-black-900: #302e4d;
+  --text-black-700: #504e70;
+}
+
+/* Redéfinition des variables de couleurs pour le thème sombre */
+body.dark {
+  --bg-black-900: #151515;
+  --bg-black-100: #222222;
+  --bg-black-50: #393939;
+  --text-black-900: #ffffff;
+  --text-black-700: #e9e9e9;
+}
+
+/* Style de base pour le corps du document */
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Réinitialisation des styles par défaut pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Assure que ::before et ::after utilisent également box-sizing: border-box */
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Style pour les listes non ordonnées */
+ul {
+  list-style: none;
+}
+
+/* Style de base pour les sections */
+.section {
+  background: var(--bg-black-900);
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  opacity: 1;
+  position: fixed;
+  left: 270px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Style spécifique pour les sections en arrière-plan */
+.section.back-section {
+  z-index: 1;
+}
+
+/* Style pour les sections actives avec animation */
+.section.active {
+  z-index: 2;
+  opacity: 1;
+  animation: slideSection 1s ease;
+}
+
+/* Style pour personnaliser la barre de défilement dans les navigateurs WebKit */
+::-webkit-scrollbar {
+  width: 6px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4; /* Couleur de fond de la piste de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333; /* Couleur de la poignée de défilement */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555; /* Couleur de la poignée de défilement au survol */
+}
+
+/* Animation pour le défilement des sections */
+@keyframes slideSection {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Style pour cacher des éléments */
+.hidden {
+  display: none !important;
+}
+
+/* Style pour ajouter du padding */
+.padd-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Style pour les conteneurs avec une largeur maximale et centrés */
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+/* Style spécifique pour le conteneur dans une section */
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+/* Style pour les titres de sections */
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+}
+
+/* Style pour les titres h2 dans les sections */
+.section-title h2 {
+  font-size: 40px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  position: relative;
+}
+
+/* Style pour les éléments ::before des titres h2 */
+.section-title h2::before {
+  content: "";
+  height: 4px;
+  width: 50px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+/* Style pour les éléments ::after des titres h2 */
+.section-title h2::after {
+  content: "";
+  height: 4px;
+  width: 25px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+}
+
+/* Style de base pour le flexbox row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+}
+
+/* Style pour les boutons */
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 35px;
+  color: white;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+  background: var(--skin-color);
+  transition: all 0.3s ease;
+}
+
+/* Style pour les boutons lors du survol */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Style pour ajouter une ombre portée pour un effet "sombre" */
+.shadow-dark {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+/* Style pour l'élément aside */
+.aside {
+  width: 270px;
+  background: var(--bg-black-100);
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  height: 100%;
+  border-right: 1px solid var(--bg-black-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Style pour le logo dans l'élément aside */
+.aside .logo {
+  position: absolute;
+  top: 50px;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.logo {
+  width: 225px;
+  height: 225px;
+
+}
+
+/* Style pour le lien dans le logo */
+.aside .logo a {
+  color: var(--text-black-900);
+  font-weight: 700;
+  padding: 15px 20px;
+  font-size: 30px;
+  letter-spacing: 5px;
+  position: relative;
+}
+
+/* Style pour le span dans le lien du logo */
+.aside .logo a span {
+  font-family: "Clicker Script", cursive;
+  font-size: 40px;
+}
+
+/* Style pour les éléments ::before du lien dans le logo */
+.aside .logo a::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /*border-bottom: 5px solid var(--skin-color);
+  border-left: 5px solid var(--skin-color);*/
+  bottom: 0;
+  left: 0;
+}
+
+/* Style pour les éléments ::after du lien dans le logo */
+.aside .logo a::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /*border-top: 5px solid var(--skin-color);
+  border-right: 5px solid var(--skin-color);*/
+  top: 0;
+  right: 0;
+}
+
+/* Style pour le commutateur de navigation dans l'élément aside */
+.aside .nav-toggler {
+  height: 40px;
+  width: 45px;
+  border: 1px solid var(--bg-black-50);
+  cursor: pointer;
+  position: fixed;
+  left: 300px;
+  top: 20px;
+  border-radius: 5px;
+  background: var(--bg-black-100);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Style pour le span dans le commutateur de navigation */
+.aside .nav-toggler span {
+  height: 2px;
+  width: 18px;
+  background: var(--skin-color);
+  display: inline-block;
+  position: relative;
+}
+
+/* Style pour le commutateur de navigation lorsqu'il est ouvert */
+.aside .nav-toggler.open span {
+  background-color: transparent;
+}
+
+/* Style pour les éléments ::before du span dans le commutateur de navigation */
+.aside .nav-toggler span::before {
+  content: "";
+  height: 2px;
+  width: 18px;
+  background: var(--skin-color);
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+/* Style pour les éléments ::before du span dans le commutateur de navigation lorsqu'il est ouvert */
+.aside .nav-toggler.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* Applique un style au pseudo-élément `::after` pour un élément avec les classes `.aside` et `.nav-toggler span`. */
+.aside .nav-toggler span::after {
+  content: ""; /* Définit le contenu du pseudo-élément comme vide. */
+  height: 2px; /* Définit la hauteur du pseudo-élément à 2px. */
+  width: 18px; /* Définit la largeur du pseudo-élément à 18px. */
+  background: var(
+    --skin-color
+  ); /* Applique une couleur de fond définie par la variable CSS `--skin-color`. */
+  position: absolute; /* Positionne absolument le pseudo-élément par rapport à son parent positionné. */
+  top: 6px; /* Positionne le pseudo-élément à 6px du haut de son parent. */
+  left: 0; /* Alignement du pseudo-élément à gauche dans son parent. */
+}
+
+/* Ajoute un style au pseudo-élément `::after` lorsqu'il est dans l'état `open`. */
+.aside .nav-toggler.open span::after {
+  transform: rotate(-45deg); /* Effectue une rotation de -45 degrés. */
+  top: 0; /* Réinitialise la position du haut du pseudo-élément. */
+}
+
+/* Applique un style au bloc `.nav` qui se trouve à l'intérieur d'un élément avec la classe `.aside`. */
+.aside .nav {
+  margin-top: 50px; /* Ajoute une marge supérieure de 50px. */
+}
+
+/* Applique un style aux éléments `li` à l'intérieur d'un `.nav` qui se trouve à l'intérieur d'un `.aside`. */
+.aside .nav li {
+  margin-bottom: 20px; /* Ajoute une marge inférieure de 20px à chaque élément `li`. */
+  display: block; /* Affiche l'élément `li` comme un bloc, le rendant pleine largeur. */
+}
+
+/* Applique un style aux liens (`a`) à l'intérieur des éléments `li` du `.nav` dans `.aside`. */
+.aside .nav li a {
+  font-size: 16px; /* Définit la taille de police à 16px. */
+  font-weight: 600; /* Définit le poids de la police à 600 (semi-gras). */
+  display: block; /* Affiche le lien comme un bloc. */
+  border-bottom: 1px solid var(--bg-black-50); /* Ajoute une bordure inférieure de 1px. */
+  color: var(
+    --text-black-900
+  ); /* Définit la couleur du texte en utilisant la variable CSS `--text-black-900`. */
+  padding: 5px 15px; /* Ajoute un padding autour du lien. */
+}
+
+/* Applique un style spécifique aux liens avec la classe `.active` dans le même contexte que ci-dessus. */
+.aside .nav li a.active {
+  color: var(
+    --skin-color
+  ); /* Change la couleur du texte en utilisant la variable CSS `--skin-color`. */
+}
+
+/* Applique un style aux éléments `i` à l'intérieur des liens dans `.nav` de `.aside`. */
+.aside .nav li a i {
+  margin-right: 15px; /* Ajoute une marge à droite de 15px. */
+}
+
+/* Section d'accueil */
+.home {
+  min-height: 100vh; /* Définit la hauteur minimale de l'élément à 100% de la hauteur de la fenêtre du navigateur (viewport height). */
+  display: flex; /* Utilise Flexbox pour la disposition des éléments enfants. */
+  color: var(
+    --text-black-900
+  ); /* Définit la couleur du texte en utilisant la variable CSS `--text-black-900`. */
+}
+
+/* Style pour la section contenant les informations dans `.home`. */
+.home .home-info {
+  flex: 0 0 60%; /* Régle le flex-grow à 0, flex-shrink à 0 et flex-basis à 60%, fixant sa largeur à 60% de celle du parent. */
+  max-width: 60%; /* Fixe une largeur maximale à 60%. */
+}
+
+/* Style pour les en-têtes h3 avec la classe `hello`. */
+h3.hello {
+  font-size: 28px; /* Définit la taille de police à 28px. */
+  margin: 15px 0; /* Ajoute une marge de 15px en haut et en bas. */
+}
+
+/* Style pour les éléments `span` à l'intérieur des en-têtes h3 avec la classe `hello`. */
+h3.hello span {
+  /*font-family: /*"Clicker Script", cursive;*/ /* Définit la famille de polices à 'Clicker Script' et cursive en cas de repli. */
+  font-size: 30px; /* Définit la taille de police à 30px. */
+  font-weight: 700; /* Définit le poids de la police à 700 (gras). */
+  color: var(
+    --skin-color
+  ); /* Applique une couleur définie par la variable CSS `--skin-color`. */
+}
+
+/* Style pour les en-têtes h3 avec la classe `my-profession`. */
+h3.my-profession {
+  font-size: 30px; /* Définit la taille de police à 30px. */
+  margin: 15px 0; /* Ajoute une marge de 15px en haut et en bas. */
+}
+
+/* Style pour les éléments avec la classe `typing`. */
+.typing {
+  color: var(
+    --skin-color
+  ); /* Applique une couleur définie par la variable CSS `--skin-color`. */
+}
+
+/* Style pour les éléments `p` à l'intérieur de `.home-info`. */
+.home-info p {
+  margin-bottom: 70px; /* Ajoute une marge inférieure de 70px. */
+  font-size: 20px; /* Définit la taille de police à 20px. */
+  color: var(
+    --text-black-700
+  ); /* Définit la couleur du texte en utilisant la variable CSS `--text-black-700`. */
+}
+
+/* Style pour la section `.home-img` dans `.home`. */
+.home .home-img {
+  flex: 0 0 40%; /* Régle le flex-grow à 0, flex-shrink à 0 et flex-basis à 40%, fixant sa largeur à 40% de celle du parent. */
+  max-width: 40%; /* Fixe une largeur maximale à 40%. */
+  text-align: center; /* Centre le contenu textuellement. */
+  position: relative; /* Définit la position de l'élément comme relative. */
+}
+
+
+/* Pseudo-élément `::after` pour `.home-img`. */
+.home-img::after {
+  content: ""; /* Définit le contenu du pseudo-élément comme vide. */
+  position: absolute; /* Positionne absolument par rapport à son parent relatif. */
+  height: 80px; /* Définit la hauteur à 80px. */
+  width: 80px; /* Définit la largeur à 80px. */
+  
+  /* angle droit bas de la photo */
+  /* border-bottom: 10px solid var(--skin-color); /* Crée une bordure inférieure épaisse de couleur définie par la variable CSS. */
+  /* border-right: 10px solid var(--skin-color); /* Crée une bordure droite épaisse de couleur définie par la variable CSS. */
+  /* right: -10px; /* Positionne à 20px du côté droit. */
+  /* bottom: 10px; /* Positionne à -40px du bas, s'étendant à l'extérieur de l'élément parent. */
+}
+
+
+/* Pseudo-élément `::before` pour `.home-img`. */
+.home-img::before {
+  content: ""; /* Définit le contenu du pseudo-élément comme vide. */
+  position: absolute; /* Positionne absolument par rapport à son parent relatif. */
+  height: 80px; /* Définit la hauteur à 80px. */
+  width: 80px; /* Définit la largeur à 80px. */
+  border-top: 10px solid var(--skin-color); /* Crée une bordure supérieure épaisse de couleur définie par la variable CSS. */
+  border-left: 10px solid var(--skin-color); /* Crée une bordure gauche épaisse de couleur définie par la variable CSS. */
+  left: -10px; /* Positionne à -20px du côté gauche, s'étendant à l'extérieur de l'élément parent. */
+  top: -35px; /* Positionne à -40px du haut, s'étendant à l'extérieur de l'élément parent. */
+}
+
+/* Style pour les images à l'intérieur de `.home .home-img`. */
+.home .home-img img {
+  margin: auto; /* Centre l'image. */
+  border-radius: 5px; /* Arrondit les coins de l'image avec un rayon de 5px. */
+  height: 400px; /* Définit la hauteur de l'image à 400px. */
+}
+
+/* CSS de la partie 'À propos de moi' */
+.about .about-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .about-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .about-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--text-black-900);
+}
+.about .about-content .about-text h3 span {
+  color: var(--skin-color);
+}
+.about .about-content .about-text p {
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--text-black-700);
+}
+.about .about-content .personal-info {
+  flex: 0 0 60%;
+  max-width: 60%;
+  margin-top: 40px;
+}
+.about .about-content .personal-info .info-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.about .about-content .personal-info .info-item p {
+  font-weight: 600;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--text-black-900);
+  border-bottom: 1px solid var(--bg-black-50);
+}
+.about .about-content .personal-info .info-item p span {
+  font-weight: 400;
+  color: var(--text-black-700);
+  margin-left: 4px;
+  display: inline-block;
+}
+.about .about-content .personal-info .buttons {
+  margin-top: 30px;
+}
+.about .about-content .personal-info .buttons .btn {
+  margin-top: 10px;
+}
+.about .about-content .skills {
+  flex: 0 0 40%;
+  max-width: 40%;
+  margin-top: 40px;
+}
+.about .about-content .skills .skill-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .skills .skill-item h5 {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-black-900);
+  text-transform: capitalize;
+}
+.about .about-content .skills .skill-item .progress {
+  background-color: var(--bg-black-50);
+  height: 14px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+}
+.about .about-content .skills .skill-item {
+  margin-bottom: 25px;
+}
+.about .about-content .skills .skill-item .progress .progress-in {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--skin-color);
+}
+.about .about-content .skills .skill-item .skill-percent {
+  position: absolute;
+  right: 0;
+  color: var(--text-black-900);
+  top: -40px;
+  font-weight: 400;
+  line-height: 40px;
+}
+.about .about-content .education,
+.about .about-content .experience {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-top: 30px;
+}
+.about .about-content h3.title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--text-black-900);
+}
+.about .about-content .timeline-box {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .timeline {
+  background-color: var(--bg-black-100);
+  padding: 30px 15px;
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+.about .about-content .timeline .timeline-item {
+  position: relative;
+  padding-left: 37px;
+  padding-bottom: 50px;
+}
+.about .about-content .timeline .timeline-item:last-child {
+  padding-bottom: 0;
+}
+.about .about-content .timeline .timeline-item::before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  left: 7px;
+  top: 0;
+  background-color: var(--skin-color);
+}
+.about .about-content .timeline .circle-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--skin-color);
+}
+.about .about-content .timeline .timeline-date {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--text-black-700);
+}
+.about .about-content .timeline .timeline-date .fa {
+  margin-right: 5px;
+}
+.about .about-content .timeline .timeline-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: var(--text-black-900);
+}
+.about .about-content .timeline .timeline-text {
+  line-height: 25px;
+  font-size: 16px;
+  text-align: justify;
+  color: var(--text-black-700);
+}
+.book {
+  color: #cc0066;
+}
+.book:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* CSS de la partie 'À propos de moi' */
+
+/* CSS de la partie 'Mes services' */
+.service .container {
+  padding-bottom: 40px;
+}
+.service .service-item {
+  margin-bottom: 30px;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+.service .service-item .service-item-inner {
+  background-color: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner:hover {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+.service .service-item .service-item-inner .icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner .icon .fa {
+  font-size: 40px;
+  line-height: 60px;
+  color: var(--skin-color);
+  transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner:hover .icon {
+  background: var(--skin-color);
+}
+.service .service-item .service-item-inner:hover .icon .fa {
+  font-size: 25px;
+  color: #ffffff;
+}
+.service .service-item .service-item-inner h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.service .service-item .service-item-inner p {
+  font-size: 16px;
+  color: var(--text-black-700);
+  line-height: 25px;
+}
+/* CSS de la partie 'Mes services' */
+
+/* CSS de la partie 'Mes projets' */
+.portfolio .container {
+  padding-bottom: 40px;
+}
+.portfolio .portfolio-heading {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+.portfolio .portfolio-heading h2 {
+  color: var(--text-black-900);
+  font-weight: 500;
+}
+.portfolio .portfolio-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+}
+.portfolio .portfolio-item-inner {
+  border: 6px solid var(--bg-black-100);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.portfolio .portfolio-item-inner .portfolio-img img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-video {
+  flex: 0 0 50%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.portfolio-video-inner {
+  border: 6px solid var(--bg-black-100);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.modal {
+  display: none; /* Caché par défaut */
+  position: fixed; /* Reste en place */
+  z-index: 1000; /* Augmentez cette valeur pour qu'elle soit supérieure à celle des autres éléments */
+  padding-top: 100px; /* Positionnement vertical de la boîte */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largeur totale */
+  height: 100%; /* Hauteur totale */
+  overflow: auto; /* Permet le défilement si nécessaire */
+  background-color: rgba(0, 0, 0, 0.9); /* Noir avec opacité */
+}
+
+.modal-content {
+  margin: auto; /* Centrer automatiquement */
+  display: block; /* Afficher en tant que bloc */
+  width: 80%; /* Largeur de 80% de son conteneur */
+  max-width: 700px; /* Largeur maximale de 700px */
+}
+
+.close {
+  position: absolute; /* Positionnement absolu par rapport à son parent */
+  top: 15px; /* 15px depuis le haut */
+  right: 35px; /* 35px depuis la droite */
+  color: #f1f1f1; /* Couleur du texte */
+  font-size: 40px; /* Taille de la police */
+  font-weight: bold; /* Poids de la police */
+  cursor: pointer; /* Style du curseur en pointeur pour indiquer qu'il est cliquable */
+}
+/* CSS de la partie 'Mes projets' */
+
+/* CSS de la partie 'Contact' */
+.contact-title {
+  color: var(--skin-color);
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.contact-sub-title {
+  color: var(--text-black-900);
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 60px;
+}
+.contact .contact-info-item {
+  flex: 0 0 25%;
+  max-width: 25%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.contact .contact-info-item .icon {
+  display: inline-block;
+}
+.contact .contact-info-item .icon .fa {
+  font-size: 25px;
+  color: var(--skin-color);
+}
+.contact .contact-info-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-black-900);
+  text-transform: capitalize;
+  margin: 15px 0 5px;
+}
+.contact .contact-info-item p {
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--text-black-700);
+  font-weight: 400;
+}
+.contact .contact-form {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.contact .contact-form .col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.contact .contact-form .col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.contact .contact-form .form-item {
+  margin-bottom: 30px;
+}
+.contact .contact-form .form-item .form-control {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  padding: 10px 25px;
+  font-size: 16px;
+  color: var(--text-black-700);
+  transition: all 0.3s ease;
+}
+.contact .contact-form .form-item .form-control:focus {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+.contact .contact-form .form-item textarea.form-control {
+  height: 140px;
+}
+.contact .contact-form .btn {
+  height: 50px;
+  padding: 0 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%; /* Prend toute la largeur sur les petits écrans */
+}
+/* CSS de la partie 'Contact' */
+
+@media screen and (min-width: 768px) {
+  .form-item {
+    flex-basis: calc(
+      50% - 30px
+    ); /* Deux éléments par ligne sur les écrans plus larges */
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}
+
+/* css pour la première partie de 'Contact' */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 300px; /* Vous pouvez ajuster cette largeur selon vos besoins */
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px; /* Coins arrondis */
+  background-color: white; /* Couleur de fond */
+  color: #000;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  color: #000 !important;
+}
+
+.icon {
+  font-size: 20px; /* Ajuster selon le besoin */
+}
+/* css pour la première partie de 'Contact' */
+
+/* CSS pour rendre la page responsive */
+@media (max-width: 1199px) {
+  .section .container {
+    padding-top: 70px;
+  }
+  .aside {
+    left: -270px;
+  }
+  .aside.open {
+    left: 0;
+  }
+  .aside .nav-toggler {
+    display: flex;
+    left: 30px;
+  }
+  .aside .nav-toggler.open {
+    left: 300px;
+  }
+  .section {
+    left: 0;
+  }
+  .section.open {
+    left: 270px;
+  }
+  .about .about-content .personal-info .info-item p span {
+    display: block;
+    margin-left: 0;
+  }
+}
+@media (max-width: 991px) {
+  .contact .contact-info-item,
+  .portfolio .portfolio-item,
+  .service .service-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .home .home-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .home .home-img {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .contact .contact-form .col-6,
+  .contact .contact-info-item,
+  .portfolio .portfolio-item,
+  .service .service-item,
+  .about .about-content .experience,
+  .about .about-content .education,
+  .about .about-content .skills,
+  .about .about-content .personal-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+/* CSS pour rendre la page responsive */
