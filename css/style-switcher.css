@@ -62,6 +62,15 @@
     width: 30px;
     border-radius: 50%;
 }
+
+.style-switcher .color-1 {
+    background: #b15537;
+}
+.style-switcher .color-2 {
+    background: #087481;
+}
+
+/*
 .style-switcher .color-1 {
     background: #ad0011;
 }
@@ -77,3 +86,5 @@
 .style-switcher .color-5 {
     background: #1ab805;
 }
+
+*/
